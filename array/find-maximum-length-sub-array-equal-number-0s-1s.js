@@ -28,6 +28,8 @@ const result = binaryArray => {
         if (!sumMap.has(sum)) {
             sumMap.set(sum, i);
         } else {
+            //Defined starting and ending in such a way that they can be plugged in slice()
+            //For slice(), starting index is inclusive and ending is exclusive
             const startingIndexOfSubArray = sumMap.get(sum) + 1;
             const endingIndexOfSubArray = i + 1;
             const lengthOfSubArray = endingIndexOfSubArray - startingIndexOfSubArray + 1;
